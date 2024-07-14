@@ -59,48 +59,49 @@ foreach(array_slice($amount, 1) as $str){
     echo $str ."\n";
     var_dump ($str);
     //echo $str[1] ."\n";
-    $search = ['"', '$'];// Проблема: str_replace не убирал все кавычки из строки(vardump их показывал). Решение вместо заменяемых символов,в качестве первого аргумента str_replace, использовал массив  с перечнем заменяемых символов
-    $noDollar = str_replace($search, '', $str);
-    // $noQ = str_replace('"', '', $noDollar);
-    if (strpos($noDollar,',')){
-        echo "Есть ЗАПЧТАЯ";
-        $noComma = str_replace(',', '', $noDollar);
-        echo $noComma . "\n";
-        $noDollar = $noComma;
-        echo $noDollar . "\n";
-        // return $noDollar;
+    $noDollar = str_replace('$', '', $str);
+    $noQ = str_replace('"', '', $noDollar);
 
-    }
+    //$getFloat = (float)$noDollar;
+    echo $noQ ;
+    var_dump ($noQ);
+    // echo $getFloat ."\n";
 
-    $getFloat = (float)$noDollar;
-    echo $getFloat . "\n дробное значение равно: ";
-    var_dump ($getFloat);
-    if($getFloat < 0) {
-        $expense += $getFloat;
+    // if($str[0]== '-'){
+    // echo "Без доллара  A равно " . $a."\n";
+   
 
-    } else {
-        $income += $getFloat;
+    //    // $noDollarExp = (float)$a;
+        
+    // }
 
-    }
+   // echo "Без доллара равно " . $noDollarExp;
+
+    // $num = (float)$str;
+    // var_dump ($num);
+
+    // if ($num > 0) {
+    //     $income += $num;
+    // } else {
+    //     $expense -= $num;
+    // }
+    // return $income;
 }
-$income = round($income, 2);
-$expense = round($expense, 2);
-$total = $income + $expense;
-$total = (round($total, 2));
 
-var_dump ($income, $expense, $total);
-// $search = ["'",'"','$'];
-// $k = '"-$150.43"';
-// $x = str_replace($search, '', $k);
-// var_dump ($k);
-// var_dump ($x);
+$k = "-$150.43";
+$x = str_replace('"','$', '', $k);
+var_dump ($x);
 
-// $t = (float)$x;
-// var_dump ($t);
+$t = (float)$x;
+var_dump ($t);
+var_dump ($k);
 //var_dump ($amount[0]);
 
 
 
 // echo $income."\n";
 // echo $expense."\n";
+
+
+
 

@@ -34,6 +34,8 @@
                 </tr>
             </thead>
             <tbody>
+                <?php include '../app/App.php' ?>
+
                 <?php foreach ($transactions as $transaction): ?>
                     <tr>
                         <td><?= $transaction[0]?></td>
