@@ -34,12 +34,19 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- YOUR CODE -->
+                <?php foreach ($transactions as $transaction): ?>
+                    <tr>
+                        <td><?= $transaction[0]?></td>
+                        <td><?= $transaction[1]?></td>
+                        <td><?= $transaction[2]?></td>
+                        <td><?= $transaction[3]?></td>
+                    </tr>
+                    <?php endforeach ?>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3">Total Income:</th>
-                    <td><!-- YOUR CODE --></td>
+                    <td><?php $total ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Total Expense:</th>

@@ -50,6 +50,8 @@ $x = (int) null;
 var_dump(is_int($x));//true, т.к int (null) - > 0, а это целое число
 
 //1.7 Floats
+echo 'Floats:' ."\n";
+
 $y = 13_500.5;
 var_dump($y);
 echo $y."\n";
