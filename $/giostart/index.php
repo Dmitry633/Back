@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-/*
+
 echo 'joe\'s invoice' . "\n";
 $_1name = 'Gio';
 echo $_1name . "\n";
@@ -17,29 +17,29 @@ $firstname = 'Gio';
 
 echo 'Hello $firstname' . "\n";
 echo "Hello $firstname" . "\n";
-echo 'Hello ' . $firstname . "\n"; */
+echo 'Hello ' . $firstname . "\n"; 
 ?> 
-<!-- 
+
 <!DOCTYPE html>
 <html>
     <body>
         <h1>
             <?php 
-                // echo 'Hello world';
-                // $x = 1;
-                // $y = 4;
+                echo 'Hello world';
+                $x = 1;
+                $y = 4;
 
-                // echo '<p>' . $x . ', ' . $y . '</p>';
+                echo '<p>' . $x . ', ' . $y . '</p>';
         
             
             ?>
-            <?//= 'Hello world' ?>
+            <?= 'Hello world' ?>
 
         </h1>
         <p>My first paragraph.</p>
 
     </body>
-</html>  -->
+</html>  
 
 
 <?php

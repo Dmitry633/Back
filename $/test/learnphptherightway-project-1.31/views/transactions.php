@@ -36,40 +36,14 @@
             <tbody>
                 
 
-                    
+                <?php foreach ($transactions as $transaction): ?>
                     <tr>
-                <?php foreach ($date as $date_spec): ?>
-
-                    <td><?=  $date_spec?></td>
-                <?php endforeach ?>
-
-                    <tr>
-
-                    <tr>
-                <?php foreach ($check_№ as $check_№_spec): ?>
-
-                    <td><?=  $check_№_spec?></td>
-                <?php endforeach ?>
-
-                    <tr>
-
-                    <tr>
-                <?php foreach ($description as $description_spec): ?>
-
-                    <td><?=  $description_spec?></td>
-                <?php endforeach ?>
-
-                    <tr>
-
-                    <tr>
-                <?php foreach ($nums as $nums_spec): ?>
-
-                    <td><?=  $nums_spec?></td>
-                <?php endforeach ?>
-
-                    <tr>
-                        
-                    
+                        <td><?= $transaction[0]?></td>
+                        <td><?= $transaction[1]?></td>
+                        <td><?= $transaction[2]?></td>
+                        <td><?= $transaction[3]?></td>
+                    </tr>
+                    <?php endforeach ?>
             </tbody>
             <tfoot>
                 <tr>
