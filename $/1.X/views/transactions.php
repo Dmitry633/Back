@@ -36,14 +36,29 @@
             <tbody>
                 
 
-                    
+                <?php for ($i=0; $i <count($date); $i++): ?>
                     <tr>
-                <?php foreach ($date as $date_spec): ?>
+                        <td> <?=  date('M j,Y',strtotime($date[$i]))?></td>
+                        <td> <?=  $check_№[$i]?></td>
+                        <td> <?=  $description[$i]?></td>
+                            <?php if ($nums[$i] < 0): ?>
+                            <td style = 'color: red'> 
+                            <?php  else : ?>
+                            <td style= 'color: green'> 
+                            <?php endif?>
+                            <?=  $nums[$i]?>
+                        </td>
+                    <tr>
+                <?php endfor?>
+                    
+                <!-- <?php foreach ($date as $date_spec): ?>
+                    <tr>
 
                     <td><?=  $date_spec?></td>
+                    <tr>
+
                 <?php endforeach ?>
 
-                    <tr>
 
                     <tr>
                 <?php foreach ($check_№ as $check_№_spec): ?>
@@ -68,21 +83,21 @@
                 <?php endforeach ?>
 
                     <tr>
-                        
+                         -->
                     
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3">Total Income:</th>
-                    <td><?php $total ?></td>
+                        <td><?= $income ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Total Expense:</th>
-                    <td><!-- YOUR CODE --></td>
+                    <td><?= $expense ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Net Total:</th>
-                    <td><!-- YOUR CODE --></td>
+                    <td><?= $total ?></td>
                 </tr>
             </tfoot>
         </table>

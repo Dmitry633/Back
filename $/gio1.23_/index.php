@@ -222,6 +222,7 @@ echo date('d/m/Y G:ia', $currentTime - 24 *60 *60) . "\n";
 echo date_default_timezone_get(). "\n";
 
 date_default_timezone_set('UTC');
+echo 'После UTC'. "\n";
 
 echo date('d/m/Y G:ia'). "\n";
 echo date('d/m/Y G:ia', $currentTime + 5 * 24 *60 *60) . "\n";
