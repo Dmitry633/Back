@@ -35,69 +35,42 @@
             </thead>
             <tbody>
                 
-
-                <?php for ($i=0; $i <count($date); $i++): ?>
-                    <tr>
-                        <td> <?=  date('M j,Y',strtotime($date[$i]))?></td>
-                        <td> <?=  $check_№[$i]?></td>
-                        <td> <?=  $description[$i]?></td>
-                            <?php if ($nums[$i] < 0): ?>
-                            <td style = 'color: red'> 
-                            <?php  else : ?>
-                            <td style= 'color: green'> 
-                            <?php endif?>
-                            <?=  $nums[$i]?>
-                        </td>
-                    <tr>
-                <?php endfor?>
-                    
-                <!-- <?php foreach ($date as $date_spec): ?>
-                    <tr>
-
-                    <td><?=  $date_spec?></td>
-                    <tr>
-
-                <?php endforeach ?>
-
-
-                    <tr>
-                <?php foreach ($check_№ as $check_№_spec): ?>
-
-                    <td><?=  $check_№_spec?></td>
-                <?php endforeach ?>
-
-                    <tr>
-
-                    <tr>
-                <?php foreach ($description as $description_spec): ?>
-
-                    <td><?=  $description_spec?></td>
-                <?php endforeach ?>
-
-                    <tr>
-
-                    <tr>
-                <?php foreach ($nums as $nums_spec): ?>
-
-                    <td><?=  $nums_spec?></td>
-                <?php endforeach ?>
-
-                    <tr>
-                         -->
-                    
+                <?php if (! empty($transactions)): ?>
+                    <?php foreach ($transactions as $transaction): ?>
+                        <tr>
+                            <td><?=  formatDate($transaction['date']) ?></td>
+                            <td><?=  $transaction['checkNumber'] ?></td>
+                            <td><?=  $transaction['description'] ?></td>
+                            <td>
+                                <?php if ($transaction['amount'] < 0): ?>
+                                    <span style = 'color: red'>
+                                        <?=  formatDollarAmount($transaction['amount']) ?>
+                                    </span>
+                                    <?php elseif ($transaction['amount'] > 0): ?>
+                                    <span style = 'color: green'>
+                                        <?=  formatDollarAmount($transaction['amount']) ?>
+                                    </span>
+                                    <?php else : ?>
+                                        <?=  formatDollarAmount($transaction['amount']) ?>
+                                        <?php endif ?>
+                                </td>
+                        </tr>
+                    <?php endforeach ?>
+                <?php endif ?>
+                
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3">Total Income:</th>
-                        <td><?= $income ?></td>
+                        <td><?= formatDollarAmount($totals['totalIncome']) ?? 0 ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Total Expense:</th>
-                    <td><?= $expense ?></td>
+                    <td><?= formatDollarAmount($totals['totalExpense']) ?? 0 ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Net Total:</th>
-                    <td><?= $total ?></td>
+                    <td><?= formatDollarAmount($totals['netTotal']) ?? 0 ?></td>
                 </tr>
             </tfoot>
         </table>
