@@ -15,9 +15,14 @@ $files = getTransactionFiles(FILES_PATH);//получили пути до все
 // var_dump($files);
 $transactions = [];
 foreach($files as $file){//перебираем все файлы в директории
-    $transactions = array_merge($transactions, getTransactions($file));//создаем массив из файлов  по указанному ранее пути
+    $transactions = array_merge($transactions, getTransactions($file, 'extractTransaction'));//создаем массив из файлов  по указанному ранее пути
 }
-
+//касательно гибкости: если  у нас файлы из различных директорий, то мы просто дублируем строки 14-18
+// $files = getTransactionFiles(FILES_OTHER_PATH);
+// $transactions = [];
+// foreach($files as $file){
+//     $transactions = array_merge($transactions, getTransactions($file, 'extractTransactionFromBankY'));
+// }
 $totals = calculateTotals($transactions);
 
 require VIEWS_PATH . 'transactions.php';
