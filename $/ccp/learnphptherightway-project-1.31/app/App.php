@@ -3,6 +3,12 @@
 declare(strict_types = 1);
 
 function getTransactionFiles ($dirPath): array {
+    //var_dump($dirPath);
+  
+    //var_dump(scandir($dirPath));
+
+    /*
+   
     $files = [];
     foreach(scandir($dirPath) as $file) {
         if (is_dir($file)) {
@@ -11,8 +17,9 @@ function getTransactionFiles ($dirPath): array {
         $files[] =$dirPath.$file;
     }
     return $files;
+    */
 }
-
+/*
 function getTransactions(string $fileName, ?callable $transactionHandler = null): array {
     if(!file_exists($fileName)){
         trigger_error('File "' . $fileName . '"does not exist', E_USER_ERROR);
@@ -41,3 +48,4 @@ function extractTransaction(array $transactionRow): array
         'amount' => $amount
     ];
 }
+*/
